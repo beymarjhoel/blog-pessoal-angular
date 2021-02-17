@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
+import { EntrarComponent } from './entrar/entrar.component';
 
 @NgModule({
   //Declaração dos componentes
@@ -14,7 +15,8 @@ import { RodapeComponent } from './rodape/rodape.component';
     AppComponent,
     //Componentes criados
     MenuComponent,
-    RodapeComponent
+    RodapeComponent,
+    EntrarComponent
   ],
   imports: [
     BrowserModule,
