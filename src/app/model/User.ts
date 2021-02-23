@@ -1,7 +1,7 @@
 import { Postagem } from "./Postagem"
 
 //Para criar uma class
-export class Usuario {
+export class User {
 //Implementando os atributo da classe
     public id: number
     public nome: string
