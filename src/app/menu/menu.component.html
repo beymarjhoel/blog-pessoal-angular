@@ -13,13 +13,15 @@
   
             <li class="nav-item active">
                 <!-- Foto da pessoa, img-fluid deixa sua imagem responsiva a qualquer tipo de tela, rounded-circle para deixar imagem redonda -->
-                <img src="assets/me.jpg" alt="Imagem do User" width="50px" height="50px" class="img-fluid rounded-circle">
+                <!-- Interpolação da variável foto que está recebendo a foto do usuário que está logado -->
+                <img src="{{foto}}" alt="Imagem do User" width="50px" height="50px" class="img-fluid rounded-circle">
   
             </li>
   
             <li class="nav-item pl-3">
                 <!-- Nome do usuário, m-0 para tirar a margem da tag , font-weight-bold para deixar em negrito e text-white para deixar font white, fs-16 para font-size 16 do css -->
-                <p class="m-0 font-weight-bold text-white fs-16">Nome do usuário</p> 
+                <!-- Interpolação da variável nome que está recebendo o nome do usuário que está logado -->
+                <p class="m-0 font-weight-bold text-white fs-16">Olá, {{nome}}</p> 
             
             </li>  
 
@@ -40,7 +42,7 @@
 
             <li class="nav-item pl-3">
                 
-                <a class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a> 
+                <a (click)='sair()' class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a> 
             
             </li>  
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './service/auth.service';
 //É um class decorator que pertence ao NgModule, o qual torna a classe um componente.
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Olá mundo';
+ constructor(
+   public auth: AuthService
+ ) {}
 }

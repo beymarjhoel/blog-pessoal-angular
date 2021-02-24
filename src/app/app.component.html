@@ -1,2 +1,5 @@
-<!-- Para deixar as rotas dinâmicas, sem perecisar adicionar ou remover seletores o tempo todo usamos o router-outlet -->
+<!-- auth.logado() vai retornar true ou false-->
+<app-menu *ngIf='auth.logado()'></app-menu>
+<!-- Para deixar as rotas dinâmicas, sem perecisar adicionar ou remover seletores o tempo todo usamos o router-outlet (router-outlet apenas mostra as rotas que estão refêrenciadas em Router (app-routing-module.ts)) -->
 <router-outlet></router-outlet>
+<app-rodape *ngIf='auth.logado()'></app-rodape>
