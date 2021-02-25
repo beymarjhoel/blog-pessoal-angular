@@ -16,7 +16,10 @@ export class EntrarComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private router: Router
-  ) { }
+  ) {
+    //Resolve o problema de voltar e avançar com o navegador, zerando o token
+    environment.token = ''
+   }
 
   ngOnInit() {
     window.scroll(0,0)
