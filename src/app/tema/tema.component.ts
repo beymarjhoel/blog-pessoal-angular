@@ -5,16 +5,19 @@ import { TemaService } from '../service/tema.service';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
+
   selector: 'app-tema',
   templateUrl: './tema.component.html',
   styleUrls: ['./tema.component.css']
+
 })
+
 export class TemaComponent implements OnInit {
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
 
-  constructor(
+  constructor (
     private router: Router,
     private temaService: TemaService
   ) { }
