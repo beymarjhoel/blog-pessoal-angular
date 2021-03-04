@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Tema } from '../model/Tema';
 import { TemaService } from '../service/tema.service';
 import { environment } from 'src/environments/environment.prod';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
 
@@ -19,7 +20,8 @@ export class TemaComponent implements OnInit {
 
   constructor (
     private router: Router,
-    private temaService: TemaService
+    private temaService: TemaService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -41,7 +43,7 @@ export class TemaComponent implements OnInit {
   cadastrar() {
     this.temaService.postTema(this.tema).subscribe((resp: Tema) => {
       this.tema = resp
-      alert('Tema cadastrado com sucesso!')
+      this.alertas.showAlertSuccess('Tema cadastrado com sucesso!')
       //Para trazer a lista atualizada
       this.findAllTemas()
       this.tema = new Tema()

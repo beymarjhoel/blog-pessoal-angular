@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertasService } from '../service/alertas.service';
 import { environment } from './../../environments/environment.prod';
 import { UserLogin } from './../model/UserLogin';
 import { AuthService } from './../service/auth.service';
@@ -18,7 +19,8 @@ export class EntrarComponent implements OnInit {
 
   constructor (
     private auth: AuthService,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
   ) {
     //Resolve o problema de voltar e avançar com o navegador, zerando o token
     environment.token = ''
@@ -40,7 +42,7 @@ export class EntrarComponent implements OnInit {
       this.router.navigate(['/inicio'])
     }, erro => {
       if (erro.status == 500) {
-        alert('Usuário ou senha estão incorretos!')
+        this.alertas.showAlertDanger('Usuário ou senha estão incorretos!')
       }
     })
   }
