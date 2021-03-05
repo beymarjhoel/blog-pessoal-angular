@@ -1,0 +1,39 @@
+<!-- Definição do tamanho, molde e cor de fundo da navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">     
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+        <!-- d-flex align-items-center = Centralizar verticalmente todos os elementos, mr-auto = vai jogar todo seu conteúdo para a esquerda, caso fosse ml-auto ia jogar a foto, nome e o cione para a direita, se deixar só m-auto ele centraliza todos os elementos -->
+        <ul class="navbar-nav mr-auto d-flex align-items-center">  
+            <li class="nav-item active">
+                <!-- Foto da pessoa, img-fluid deixa sua imagem responsiva a qualquer tipo de tela, rounded-circle para deixar imagem redonda -->
+                <!-- Interpolação da variável foto que está recebendo a foto do usuário que está logado -->
+                <img src="{{foto}}" alt="Imagem do User" width="50px" height="50px" class="img-fluid rounded-circle">
+            </li>
+  
+            <li class="nav-item pl-3">
+                <!-- Nome do usuário, m-0 para tirar a margem da tag , font-weight-bold para deixar em negrito e text-white para deixar font white, fs-16 para font-size 16 do css -->
+                <!-- Interpolação da variável nome que está recebendo o nome do usuário que está logado -->
+                <p class="m-0 font-weight-bold text-white fs-16">Olá, {{nome}}</p> 
+            </li>  
+
+            <li class="nav-item pl-3">
+                <a [routerLink]="['/user-edit', id]">
+                    <!-- Colocado de acordo com o vídeo, possível troca no link do caminho do site de icons -->
+                    <p class="text-white fs-16 m-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
+                </a>
+            </li>
+      
+        </ul>
+        <!-- Criação de outra lista para opção SAIR, mesmas classes da ul a cima, porém com ml-auto jogando o conteúdo dentro para a direita -->
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+            <li class="nav-item pl-3">
+                <a (click)='sair()' class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a> 
+            </li>  
+        </ul>
+    
+    </div>
+
+</nav>
