@@ -111,4 +111,8 @@ export class InicioComponent implements OnInit {
     }
   }
 
+  fixar() {
+    document.body.style.paddingRight='0px'
+  }
+
 }
